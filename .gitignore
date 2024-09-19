@@ -1,0 +1,34 @@
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.swp
+
+# Ignorer les fichiers de base de données générés
+*.sql
+*.sqlite
+*.db
+
+# Ignorer les fichiers de configuration locaux
+config/*.local
+config/*.env
+
+# Ignorer les fichiers générés automatiquement
+*.bak
+*.old
+
+# Ignorer les répertoires de sauvegarde
+backup/
+
+# Ignorer les fichiers de sortie de compilation (si vous utilisez un langage compilé)
+bin/
+obj/
+
+# Ignorer les fichiers spécifiques à l'éditeur (par exemple, VS Code)
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignorer les fichiers d'indexation pour IDE
+*.iml
