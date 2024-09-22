@@ -20,3 +20,13 @@ CREATE TABLE loans (
     return_date DATE,
     FOREIGN KEY (book_id) REFERENCES books(id)
 );
+-- Table des catégories
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+-- Ajout d'une colonne de catégorie à la table des livres
+ALTER TABLE books ADD category_id INT;
+ALTER TABLE books ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+
