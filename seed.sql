@@ -16,3 +16,11 @@ INSERT INTO categories (name) VALUES ('Science Fiction');
 -- Mise à jour des livres avec leurs catégories
 UPDATE books SET category_id = 1 WHERE id = 1; -- Harry Potter
 UPDATE books SET category_id = 2 WHERE id = 2; -- A Game of Thrones;
+-- Insertion des utilisateurs
+INSERT INTO users (name, email, role, password) VALUES ('Admin User', 'admin@example.com', 'admin', 'adminpass');
+INSERT INTO users (name, email, role, password) VALUES ('Alice Smith', 'alice@example.com', 'borrower', 'alicepass');
+INSERT INTO users (name, email, role, password) VALUES ('Bob Johnson', 'bob@example.com', 'borrower', 'bobpass');
+
+-- Mise à jour des emprunts pour assigner des utilisateurs
+UPDATE loans SET user_id = 2 WHERE id = 1; -- Alice Smith
+UPDATE loans SET user_id = 3 WHERE id = 2; -- Bob Johnson
