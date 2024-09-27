@@ -30,3 +30,16 @@ CREATE TABLE categories (
 ALTER TABLE books ADD category_id INT;
 ALTER TABLE books ADD FOREIGN KEY (category_id) REFERENCES categories(id);
 
+-- Table des utilisateurs
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    role ENUM('admin', 'borrower') DEFAULT 'borrower',
+    password VARCHAR(255) NOT NULL
+);
+
+-- Ajout d'une colonne pour l'emprunteur dans la table des emprunts
+ALTER TABLE loans ADD user_id INT;
+ALTER TABLE loans ADD FOREIGN KEY (user_id) REFERENCES users(id);
+
