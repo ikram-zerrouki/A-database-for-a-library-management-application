@@ -5,6 +5,6 @@ Ce projet est une base de données pour une application de gestion de bibliothè
 ## Nouvelles Fonctionnalités
 
 - **Catégories de Livres** : Ajout de la gestion des catégories pour les livres.
-**Utilisateurs** : Gestion des utilisateurs avec des rôles d'administrateur et d'emprunteur.
+- **Utilisateurs** : Gestion des utilisateurs avec des rôles d'administrateur et d'emprunteur.
 
 
