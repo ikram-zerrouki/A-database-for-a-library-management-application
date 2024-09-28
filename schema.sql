@@ -43,3 +43,15 @@ CREATE TABLE users (
 ALTER TABLE loans ADD user_id INT;
 ALTER TABLE loans ADD FOREIGN KEY (user_id) REFERENCES users(id);
 
+-- Ajout d'une colonne pour suivre les retards
+ALTER TABLE loans ADD is_late BOOLEAN DEFAULT FALSE;
+
+-- Créer une procédure stockée pour vérifier les retards
+DELIMITER //
+CREATE PROCEDURE check_late_loans()
+BEGIN
+    UPDATE loans
+    SET is_late = TRUE
+    WHERE return_date IS NULL AND loan_date < CURDATE() - INTERVAL 30 DAY;
+END //
+DELIMITER ;
