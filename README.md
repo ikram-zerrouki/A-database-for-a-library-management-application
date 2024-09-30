@@ -8,3 +8,8 @@ Ce projet est une base de données pour une application de gestion de bibliothè
 - **Utilisateurs** : Gestion des utilisateurs avec des rôles d'administrateur et d'emprunteur.
 
 
+-- Appel de la procédure pour mettre à jour les retards
+CALL check_late_loans();
+
+
+
