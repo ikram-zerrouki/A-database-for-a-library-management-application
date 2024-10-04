@@ -55,3 +55,26 @@ BEGIN
     WHERE return_date IS NULL AND loan_date < CURDATE() - INTERVAL 30 DAY;
 END //
 DELIMITER ;
+
+-- Table des notifications
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    message VARCHAR(255),
+    notification_date DATE,
+    is_read BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Créer une procédure stockée pour générer des notifications de retard
+DELIMITER //
+CREATE PROCEDURE generate_late_notifications()
+BEGIN
+    INSERT INTO notifications (user_id, message, notification_date)
+    SELECT user_id, CONCAT('Le livre emprunté est en retard : ', title), CURDATE()
+    FROM loans
+    JOIN books ON loans.book_id = books.id
+    WHERE loans.is_late = TRUE;
+END //
+DELIMITER ;
+
