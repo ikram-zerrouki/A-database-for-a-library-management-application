@@ -11,5 +11,8 @@ Ce projet est une base de données pour une application de gestion de bibliothè
 -- Appel de la procédure pour mettre à jour les retards
 CALL check_late_loans();
 
+-- Appeler la procédure pour générer des notifications
+CALL generate_late_notifications();
+
 
 
