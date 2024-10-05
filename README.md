@@ -14,5 +14,8 @@ CALL check_late_loans();
 -- Appeler la procédure pour générer des notifications
 CALL generate_late_notifications();
 
+-- Appeler la procédure pour mettre à jour les pénalités
+CALL calculate_penalties();
+
 
 
