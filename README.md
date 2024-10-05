@@ -7,6 +7,8 @@ Ce projet est une base de données pour une application de gestion de bibliothè
 - **Catégories de Livres** : Ajout de la gestion des catégories pour les livres.
 - **Utilisateurs** : Gestion des utilisateurs avec des rôles d'administrateur et d'emprunteur.
 - **Retards** : Ajout de la fonctionnalité pour identifier les emprunts en retard.
+- **Catégories de Livres Hiérarchiques** : Ajout de sous-catégories pour les livres.
+- **Notifications de Retard** : Génération de notifications automatiques pour les livres en retard.
 
 -- Appel de la procédure pour mettre à jour les retards
 CALL check_late_loans();
