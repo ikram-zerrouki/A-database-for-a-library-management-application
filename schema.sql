@@ -78,3 +78,16 @@ BEGIN
 END //
 DELIMITER ;
 
+-- Créer une procédure stockée pour générer un rapport mensuel des livres empruntés
+DELIMITER //
+CREATE PROCEDURE generate_monthly_loan_report()
+BEGIN
+    SELECT books.title, COUNT(loans.id) AS total_loans
+    FROM loans
+    JOIN books ON loans.book_id = books.id
+    WHERE loan_date BETWEEN CURDATE() - INTERVAL 1 MONTH AND CURDATE()
+    GROUP BY books.title
+    ORDER BY total_loans DESC;
+END //
+DELIMITER ;
+
